@@ -19,24 +19,19 @@ class Openspace:
                 if table.has_free_spot():
                     table.assign_seat(name)
                     break
+
     def display (self):
         for i, table in enumerate(self.tables):
             print(f"Table {i+1}:")
             for seat in table.seats:
-                if seat.free:
-                    print("  - Free")
-                else:
-                    print(f"  - {seat.occupant}")
+                print(f"  - {seat.occupant}")
     
     def store(self, filename):
         with open(filename, 'w') as file:
             for i, table in enumerate(self.tables):
                 file.write(f"Table {i+1}:\n")
                 for seat in table.seats:
-                    if seat.free:
-                        file.write("  - Free\n")
-                    else:
-                        file.write(f"  - {seat.occupant}\n")
+                    file.write(f"  - {seat.occupant}\n")
 
 
 

@@ -7,11 +7,10 @@ class Seat:
     def set_occupant(self, name):
         self.occupant = name
         self.free = False
-        print(f"{self.occupant} is now occupying the seat.")
+        
 
     def remove_occupant(self):
         self.free = True
-        print(f"The seat is now free from {self.occupant}.")
         self.occupant = None
 
 
@@ -27,7 +26,6 @@ class Table:
         for seat in self.seats:
             if seat.free:
                 return True
-        print("No free spot available at this table.")
         return False
     
     def assign_seat(self, name):
