@@ -1,6 +1,11 @@
 from utils.openspace import Openspace
-from utils.table import Table
-from utils.table import Seat
+
 
 file = open("utils/new_colleagues.txt", "r")
-print(file)
+colleagues = file.read().splitlines()
+file.close()
+
+openspace = Openspace()
+openspace.organize(colleagues)
+openspace.display()
+openspace.store("utils/seating_arrangement.txt")
