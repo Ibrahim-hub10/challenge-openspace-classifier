@@ -1,4 +1,8 @@
 class Seat:
+    """
+    The Seat class represents a seat in the open space.
+    It can be occupied by a person or be free. It has methods to set and remove an occupant, and to check if it is free.
+    """
 
     def __init__(self):
         self.free = True
@@ -21,6 +25,9 @@ class Seat:
 
 
 class Table:
+    """
+    The Table class represents a table in the open space. It contains seats and manages the allocation of people to those seats
+    """
     def __init__(self):
         self.capacity = 4 # nombre de places libres dans la table
         self.seats = []

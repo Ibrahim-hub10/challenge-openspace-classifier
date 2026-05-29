@@ -4,6 +4,9 @@ from utils.table import Table, Seat
 # Your code here
 import random
 class Openspace:
+    """
+    The Openspace class represents the open space of the office. It contains tables and manages the allocation of people to those tables. 
+    """
     
     def __init__(self):
         self.number_of_tables = 6 # nombre de tables libres dans l'openspace
