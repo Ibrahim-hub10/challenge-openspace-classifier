@@ -12,6 +12,12 @@ class Seat:
     def remove_occupant(self):
         self.free = True
         self.occupant = None
+    
+    def __str__(self):
+        if self.free:
+            return "Free"
+        else:
+            return f"Occupied by {self.occupant}"
 
 
 class Table:
@@ -38,4 +44,10 @@ class Table:
     
     def left_capacity(self):
         return self.capacity
+    
+    def __str__(self):
+        result = "Table status:\n"
+        for i, seat in enumerate(self.seats):
+            result += f"Seat {i + 1}: {seat}\n"
+        return result
     

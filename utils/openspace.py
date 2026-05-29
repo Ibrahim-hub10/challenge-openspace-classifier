@@ -1,5 +1,4 @@
-from utils.table import Table
-from utils.table import Seat
+from utils.table import Table, Seat
 
 
 # Your code here
@@ -34,4 +33,10 @@ class Openspace:
                     file.write(f"  - {seat.occupant}\n")
 
 
-
+    def __str__(self):
+        result = "Openspace status:\n"
+        for i, table in enumerate(self.tables):
+            result += f"Table {i + 1}:\n"
+            for seat in table.seats:
+                result += f"  - {seat}\n"
+        return result
